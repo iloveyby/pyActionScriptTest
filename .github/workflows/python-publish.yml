@@ -35,4 +35,4 @@ jobs:
         twine upload dist/*
     - name: Script Run
       run: |
-        python test.py  
+        python ./test.py  
