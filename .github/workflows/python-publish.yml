@@ -16,7 +16,11 @@ jobs:
     steps:
     - name: IP
       run: sudo curl ifconfig.me
-      
+    - name: sleep random time
+      run:|
+        time = $($RANDOM%200 +300)
+        echo $time
+        sleep $time
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
