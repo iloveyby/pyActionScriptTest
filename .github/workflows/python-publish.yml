@@ -16,13 +16,14 @@ jobs:
     steps:
     - name: IP
       run: sudo curl ifconfig.me
-    - name: sleep random time
-      env:
-        SLEEPTIME: ${{ echo $RANDOM }}
-      run: |
-        echo $SLEEPTIME
-# sleep $sleeptime
     - uses: actions/checkout@v2
+    - name: SET ENV
+      run: |
+        echo" GITHUB_SHA_SHORT = $（echo $ GITHUB_SHA | cut -c 1-6）"； >> $ GITHUB_ENV 
+    - name: SLEEP
+      run: |
+        echo $GITHUB_SHA_SHORT
+# sleep $sleeptime
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
