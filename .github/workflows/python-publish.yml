@@ -17,10 +17,11 @@ jobs:
     - name: IP
       run: sudo curl ifconfig.me
     - name: sleep random time
+      env:
+        sleeptime: $RANDOM%200 +300
       run: |
-        time = $($RANDOM%200 +300)
-        echo $time
-        sleep $time
+        echo $sleeptime
+        sleep $sleeptime
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
