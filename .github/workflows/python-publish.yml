@@ -17,7 +17,7 @@ jobs:
     - name: IP
       run: sudo curl ifconfig.me
     - name: sleep random time
-      run:|
+      run: |
         time = $($RANDOM%200 +300)
         echo $time
         sleep $time
