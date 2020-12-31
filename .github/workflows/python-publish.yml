@@ -18,9 +18,9 @@ jobs:
       run: sudo curl ifconfig.me
     - name: sleep random time
       env:
-        sleeptime: ${{ $(echo $GITHUB_SHA | cut -c 1-6) }}
+        SLEEPTIME: ${{ $(echo $GITHUB_SHA | cut -c 1-6) }}
       run: |
-        echo $sleeptime
+        echo $SLEEPTIME
 # sleep $sleeptime
     - uses: actions/checkout@v2
     - name: Set up Python
