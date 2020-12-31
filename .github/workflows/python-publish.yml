@@ -19,7 +19,7 @@ jobs:
     - uses: actions/checkout@v2
     - name: SET ENV
       run: |
-        echo "SLEEP_TIME=$($RANDOM%10+1)" >> $GITHUB_ENV
+        echo "SLEEP_TIME=$($RANDOM%10)" >> $GITHUB_ENV
     - name: SLEEP
       run: |
         echo $SLEEP_TIME
