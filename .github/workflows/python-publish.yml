@@ -18,10 +18,10 @@ jobs:
       run: sudo curl ifconfig.me
     - name: sleep random time
       env:
-        sleeptime: ${{$(echo $RANDOM%10+1)}}
+        sleeptime: ${{ $(echo $GITHUB_SHA | cut -c 1-6) }}
       run: |
         echo $sleeptime
-        sleep $sleeptime
+# sleep $sleeptime
     - uses: actions/checkout@v2
     - name: Set up Python
       uses: actions/setup-python@v2
